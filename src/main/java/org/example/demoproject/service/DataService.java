@@ -7,6 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.parser.Entity;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -24,10 +27,13 @@ public class DataService {
         st.setName("ram");
         Students st03=new Students();
         st.setName("sham");
-        repo.save(st);
-        repo.save(st02);
-        repo.save(st03);
+        List<Students> studentList = Arrays.asList(st, st02, st03);
+        repo.saveAll(studentList);
         return new ResponseEntity<>("Ok",HttpStatus.OK);
 
+    }
+
+    public ResponseEntity<String> delete() {
+        return new ResponseEntity<>("Ok",HttpStatus.OK);
     }
 }
