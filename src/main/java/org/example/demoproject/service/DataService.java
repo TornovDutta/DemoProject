@@ -20,15 +20,19 @@ public class DataService {
     }
 
     public ResponseEntity<String> upload() {
-        Students st=new Students();
-        st.setName("Tornov");
-        Students st02=new Students();
-        st.setName("ram");
-        Students st03=new Students();
-        st.setName("sham");
-        List<Students> studentList = Arrays.asList(st, st02, st03);
+        Students st1 = new Students();
+        st1.setName("Tornov");
+
+        Students st2 = new Students();
+        st2.setName("Ram");
+
+        Students st3 = new Students();
+        st3.setName("Sham");
+
+        List<Students> studentList = Arrays.asList(st1, st2, st3);
         repo.saveAll(studentList);
-        return new ResponseEntity<>("Ok",HttpStatus.OK);
+
+        return new ResponseEntity<>("Ok", HttpStatus.OK);
 
     }
 
