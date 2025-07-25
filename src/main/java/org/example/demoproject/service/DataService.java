@@ -16,4 +16,18 @@ public class DataService {
     public ResponseEntity<List<Students>> getData() {
         return new ResponseEntity<>(repo.findAll(), HttpStatus.OK);
     }
+
+    public ResponseEntity<String> upload() {
+        Students st=new Students();
+        st.setName("Tornov");
+        Students st02=new Students();
+        st.setName("ram");
+        Students st03=new Students();
+        st.setName("sham");
+        repo.save(st);
+        repo.save(st02);
+        repo.save(st03);
+        return new ResponseEntity<>("Ok",HttpStatus.OK);
+
+    }
 }

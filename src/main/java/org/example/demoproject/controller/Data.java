@@ -5,6 +5,7 @@ import org.example.demoproject.service.DataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -16,5 +17,9 @@ public class Data {
     @GetMapping("/data")
     public ResponseEntity<List<Students> > getData() {
         return service.getData();
+    }
+    @PostMapping("upload")
+    public ResponseEntity<String> upload(){
+        return service.upload();
     }
 }
