@@ -1,4 +1,3 @@
 FROM openjdk:22-jdk
-ADD target/DemoProject.jar DemoProject.jar
-
-ENTRYPOINT ["java", "-jar","/students-app.jar"]
+COPY target/DemoProject.jar /students-app.jar
+ENTRYPOINT ["java", "-jar", "/students-app.jar"]
