@@ -18,7 +18,7 @@ public class Data {
     public ResponseEntity<List<Students> > getData() {
         return service.getData();
     }
-    @PostMapping("upload")
+    @GetMapping("upload")
     public ResponseEntity<String> upload(){
         return service.upload();
     }
